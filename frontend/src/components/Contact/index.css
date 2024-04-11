@@ -71,3 +71,27 @@
 .contact-col-1 button:hover {
     background-color: #0477f2;
 }
+
+
+
+.social-cont{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+
+.success-msg{
+    color: #fff;
+    text-align: center;
+    margin: 20px 0 0 0;
+    background-color: green;
+    /* padding: 10px 0 10px 0; */
+}
+
+.error-msg{
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    margin: 20px 0 0 0;
+
+}

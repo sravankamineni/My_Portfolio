@@ -10,6 +10,10 @@ const Contact = () => {
         message: ''
     });
 
+    const[successMsg,setSuccessMsg] = useState("")
+    const [errorMsg, setErrorMsg] = useState("")
+
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,13 +21,39 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3002/', {
-            Name : formData.name,
-            Email:formData.email,
-            Message:formData.message
-        })
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
+        if (formData.name !== "" && formData.email !== "" && formData.message!=="") {
+            axios.post('http://localhost:3002/', {
+                Name: formData.name,
+                Email: formData.email,
+                Message: formData.message
+            })
+                .then((res) => {
+                    console.log(res)
+                    if (res.status === 200) {
+                        setSuccessMsg(res.data.message)
+                    }
+                    setTimeout(() => {
+                        setSuccessMsg("")
+                    }, 4000)
+                })
+                .catch(err => console.log(err))
+
+            setFormData({
+                name: '',
+                email: '',
+                message: ''
+
+            })
+            
+        }
+
+        else{
+            setErrorMsg("Details Required*")
+            setTimeout(() => {
+                setErrorMsg("")
+            }, 4000)
+        }
+        
     };
     return(
         <div id='contact'>
@@ -52,7 +82,9 @@ const Contact = () => {
                                 value={formData.message}
                                 onChange={handleChange}
                             ></textarea>
-                            <button type="submit">Submit</button>
+                            <button type="submit">Send</button>
+                            <p className='success-msg'>{successMsg}</p>
+                            <p className='error-msg'>{errorMsg}</p>
                         </form>
                         
 

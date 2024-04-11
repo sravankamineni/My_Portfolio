@@ -30,14 +30,12 @@ app.post("/", (req, res) => {
     db.query(sql, Values ,(err, results)=>{
         if(err){
             res.send(err)
-        }
+        }   
         else{
             console.log("Sent Successfully")
-            res.send({message:"details added"})
+            res.send({message:"sent successfully"})
         }
     })
-
-
     // const sql = "select * from contact";
     // db.query(sql, (err, data) => {
     // if (err) return res.send("Error")
