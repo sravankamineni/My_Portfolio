@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors());
 
-const PORT = 3002
+const PORT = process.env.PORT || 3000
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -38,11 +38,7 @@ app.post("/", (req, res) => {
             res.send({message:"sent successfully"})
         }
     })
-    // const sql = "select * from contact";
-    // db.query(sql, (err, data) => {
-    // if (err) return res.send("Error")
-    // return res.send(data);
-    //  })
+
 });
 
 app.listen(PORT, () => {
