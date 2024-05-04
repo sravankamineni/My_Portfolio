@@ -6,6 +6,8 @@ const app = express()
 app.use(express.json())
 app.use(cors());
 
+const PORT = 3002
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -43,7 +45,7 @@ app.post("/", (req, res) => {
     //  })
 });
 
-app.listen(3002, () => {
+app.listen(PORT, () => {
     console.log("Listening...");
 })
 
