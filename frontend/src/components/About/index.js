@@ -85,12 +85,14 @@ class About extends Component {
                                 </ul>
                             </div> 
                             {/* <div className="btn-cont"> */}
-                            <button className='resume-btn'>
-                                <a href="https://drive.google.com/file/d/1uFhIISpbwXCjiJDrHUPUOCdIegivWAzw/view?usp=drive_link" target="_blank" rel="noreferrer">
+                         
+                            <a href="https://drive.google.com/file/d/1xmVaAdegmugkStxW3Y5XNWXj9B-0288z/view?usp=drive_link" target="_blank" rel="noreferrer">
+                                <button className='resume-btn'>
                                     RESUME
+                                </button>
                                 </a>   
                                     
-                            </button>
+                        
                             {/* </div> */}
                            
                             

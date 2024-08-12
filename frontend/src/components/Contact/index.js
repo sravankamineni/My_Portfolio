@@ -22,7 +22,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (formData.name !== "" && formData.email !== "" && formData.message!=="") {
-            axios.post('http://localhost:3000/', {
+            axios.post('http://localhost:3001/', {
                 Name: formData.name,
                 Email: formData.email,
                 Message: formData.message
